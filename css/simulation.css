@@ -1,0 +1,20 @@
+#config_initiale > div:last-child{
+  width: 28%
+}
+
+#config_strategies > p:nth-child(n+2){
+  font-size: 12px;
+  margin-top: -2px;
+}
+
+footer{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+footer > a{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+}

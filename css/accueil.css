@@ -1,0 +1,239 @@
+html, body {
+  background-color: #51b051;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+input{
+  box-shadow: 0 0 3px #000;
+}
+#config_initiale{
+  margin-top: 15px;
+  background-color: white;
+  display: flex;
+}
+#config_initiale > div:nth-child(1),#config_initiale > div:nth-child(2),#config_initiale > div:nth-child(3){
+  width:24%;
+  height:200px;
+}
+#config_initiale > div:nth-child(4){
+  width:14%;
+  height:200px;
+}
+#config_initiale > div:nth-child(5){
+  height:200px;
+  width:14%;
+  outline: 2px solid #51b051;
+}
+#btnStart{
+  height: 30px;
+  margin-bottom: 10px;
+  margin-top: auto;
+  border-radius: 30px 30px 30px 30px;
+}
+#server_config, #vm_config, #services_config{
+  overflow-y: scroll;
+  text-align: center;
+}
+.server_CPU_config, .server_RAM_config,.server_CAPACITY_config, .vm_CPU_config, .vm_RAM_config, .service_CPU_config, .service_RAM_config, .service_MU_config{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#server_config > div, #vm_config > div, #services_config > div{
+  font-size: 11px;
+}
+.server_test,#server_add,.vm_test,#vm_add,.service_test,#service_add{
+  display: flex;
+  border: 2px solid black;
+  margin-bottom: -2px;
+}
+.server_test{
+  background-color: #57ad57;
+  color: black;
+}
+.vm_test{
+  background-color: #cfd138;
+  color: black;
+}
+.service_test{
+  background-color: #7272f7;
+  color: black;
+}
+.service_MU_config{
+  margin-left: -22px;
+}
+.server_CAPACITY_config{
+  margin-left:1.5px;
+}
+.service_MU_config,.service_RAM_config,.server_RAM_config,.server_CAPACITY_config{
+  margin-top: -17.5px;
+}
+#server_add,#vm_add,#service_add{
+  color: black;
+  background-color: lightgrey;
+}
+#server_add > div:first-child{
+  color: black;
+}
+.server_test > div, #server_add > div, .vm_test > div, #vm_add > div, .service_test > div, #service_add > div{
+  width: 33%;
+}
+.server_test > div > div > button, #server_add > div > div > button, .vm_test > div > div > button, #vm_add > div > div > button, .service_test > div > div > button, #service_add > div > div > button{
+  font-size: 9px;
+  margin:0px 5px;
+}
+#server_add > div > input, #vm_add > div > input, #service_add > div > input{
+  max-width: 100px;
+  text-align: center;
+}
+.server_test > div:last-child > button, #server_add > div:last-child > button{
+  margin-top:16%;
+}
+.vm_test > div:last-of-type > div > p:before, .service_test > div:last-of-type > div > p:before{
+  content:'Parent: ';
+}
+#vm_add > div:last-child > div, #service_add > div:last-child > div{
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+#vm_add > div:last-child > div > select, #service_add > div:last-child > div > select{
+  text-align: center;
+  width: 120px;
+  max-width: 120px;
+  font-size: 11px;
+}
+.vm_RAM_config, .service_RAM_config{
+  margin-left: 2.5px;
+}
+.server_RAM_config{
+  margin-left: 1px;
+}
+#server_config > p, #vm_config > p, #services_config > p, #config_strategies > p{
+  text-align: center;
+}
+.server_CPU_config > p:first-child, .vm_CPU_config > p:first-child,  .service_CPU_config > p:first-child{
+  margin-left: 5px;
+  text-align: center;
+}
+.service_CPU_config > p:last-child::before, .vm_CPU_config > p:last-child::before{
+  content:'Max: ';
+}
+.service_RAM_config > p:last-child::before, .vm_RAM_config > p:last-child::before{
+  content:'Max: ';
+}
+
+#config_strategies > div{
+  margin-top: -10px;
+  font-size : 12px;
+  margin-bottom: 0px;
+}
+
+#config_strategies > div > p{
+  font-size : 12px;
+  text-align: center;
+}
+
+#config_strategies > div:nth-child(n+3) > div{
+  margin-top: -5px;
+}
+
+#config_strategies > div > div{
+  width:150px;
+  margin-top: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#config_strategies > div > div > input{
+  font-size : 12px;
+}
+
+#horizontal > div > select, #vertical > div > select{
+  font-size : 11px;
+  width: 120px;
+  text-align: center;
+}
+
+#config_initiale > div:last-child{
+  text-align: center;
+  margin-right: 0px;
+  margin-left: auto;
+}
+#import_xml > input{
+  width: 70px;
+  height: 30px;
+  border-radius: 30px 30px 30px 30px;
+}
+#choose_xml{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+#choose_xml + label{
+  font-weight: 700;
+  padding: 4px 10px;
+  color: white;
+  background-color: #51b051;
+  display: inline-block;
+  border-radius: 30px;
+  box-shadow: 0 0 3px #000;
+}
+#import_xml > input ~ input{
+  width: auto;
+  font-weight: 700;
+  padding: 4px 10px;
+  color: white;
+  background-color: #51b051;
+  display: inline-block;
+}
+#choose_xml:focus + label, #choose_xml + label:hover, #import_xml > p > a > input:hover {
+  background-color: #2a5e2a;
+}
+body > div:nth-child(3){
+  margin-top: 10px;
+  display: flex;
+}
+body > div:nth-child(3) > div{
+  background-color: white;
+}
+body > div:nth-child(3) > div:first-child{
+  height: 520px;
+  width: 49.5%;
+  /*display: flex;*/
+}
+#play_pause{
+  margin-top: 2.5%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 22px;
+  width:350px;
+  justify-content: center;
+  display:flex;
+}
+#play_pause > button{
+  width:78px;
+}
+body > div:nth-child(3) > div:last-child{
+  width: 49.5%;
+  height: 520px;
+  margin-right: 0px;
+  margin-left: auto;
+}
+canvas{
+  height: 450px !important;
+}
+#container_canvas > div > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+#container_canvas > div > div > input{
+  margin-left: 10px;
+  margin-right: 30px;
+}
+footer{
+  margin-top: 20px;
+}

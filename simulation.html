@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Simulation Cloud</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="css/navbar.css" />
+		<link rel="stylesheet" href="css/accueil.css" />
+		<link rel="stylesheet" href="css/simulation.css" />
+		<link rel="stylesheet" href="css/cy.css" />
+    <script src="js/simulation.js"></script>
+		<script src="view/Cyto.js" type="module"></script>
+    <script src="lib/cytoscape.min.js"></script>
+		<script src="js/vkbeautify.js"></script>
+		<script src="https://unpkg.com/layout-base/layout-base.js"></script>
+		<script src="https://unpkg.com/cose-base/cose-base.js"></script>
+		<script src="../lib/cytoscape-cose-bilkent.js"></script>
+		<!-- ELIAN / ALAN-->
+		<script src="./control/Simulation.js" type="module"></script>
+		<style>
+      #myPlot {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+      }
+		</style>
+  </head>
+  <body>
+		<header>
+			<p><b>Simulateur Cloud</b></p>
+			<div id="progress_bar">
+				<div id="separator1"> </div>
+				<div>
+					<p>1/ Configuration Initiale</p>
+				</div>
+				<div id="separator2"> </div>
+				<div>
+					<p>2/ Debut Simulation</p>
+				</div>
+				<div id="separator3"> </div>
+				<div>
+					<p>3/ Fin Simulation</p>
+				</div>
+			</div>
+    </header>
+		<!--<div>Press F12 for console log</div>-->
+		<div id="config_initiale">
+			<div id="server_config">
+				<p><b>Servers List</b></p>
+				<div class="server_test">
+					<div class="server_id">
+						<p>Server Id:</p>
+						<p style="text-align:center;">server</p>
+					</div>
+					<div>
+						<div class="server_CPU_config">
+							<p>CPU</p>
+							<button class="server_remove_CPU" disabled style="visibility:hidden">-</button>
+							<p class="server_CPU_value">8</p>
+							<button class="server_add_CPU" disabled style="visibility:hidden">+</button>
+						</div>
+						<div class="server_RAM_config">
+							<p>RAM</p>
+							<button class="server_remove_RAM" disabled style="visibility:hidden">-</button>
+							<p class="server_RAM_value">8</p>
+							<button class="server_add_RAM" disabled style="visibility:hidden">+</button>
+						</div>
+						<div class="server_CAPACITY_config">
+							<p>CAP</p>
+							<button class="server_remove_CAPACITY" style="visibility:hidden">-</button>
+							<p class="server_CAPACITY_value">10</p>
+							<button class="server_add_CAPACITY" style="visibility:hidden">+</button>
+						</div>
+					</div>
+					<div>
+						<button class="delete_server" disabled style="visibility:hidden">Supprimer</button>
+					</div>
+				</div>
+			</div>
+			<div id="vm_config">
+				<p><b>VMs List</b></p>
+				<!--<div id="vm_add">
+					<div class="vm_id">
+						<p>VM Id:</p>
+						<input id="vm_input" type="text"></input>
+					</div>
+					<div>
+						<div class="vm_CPU_config">
+							<p>CPU</p>
+							<button class="vm_remove_CPU">-</button>
+							<p class="vm_CPU_value">0</p>
+							<button class="vm_add_CPU" >+</button>
+							<p class="server_CPU_available">0</p>
+						</div>
+						<div class="vm_RAM_config">
+							<p>RAM</p>
+							<button class="vm_remove_RAM">-</button>
+							<p class="vm_RAM_value">0</p>
+							<button class="vm_add_RAM">+</button>
+							<p class="server_RAM_available">0</p>
+						</div>
+					</div>
+					<div>
+						<div>
+							<select id="choix_server">
+								<option value="0">Aucun</option>
+							</select>
+						</div>
+						<button id="add_vm">Ajouter</button>
+					</div>
+				</div>-->
+			</div>
+			<div id="services_config">
+				<p><b>Services List</b></p>
+				<!--<div id="service_add">
+					<div class="service_id">
+						<p>Service Id:</p>
+						<input id="service_input" type="text"></input>
+					</div>
+					<div>
+						<div class="service_CPU_config">
+							<p>CPU</p>
+							<button class="service1_remove_CPU">-</button>
+							<p class="service_CPU_value">0</p>
+							<button class="service_add_CPU" >+</button>
+							<p class="vm_CPU_available">0</p>
+						</div>
+						<div class="service_RAM_config">
+							<p>RAM</p>
+							<button class="service_remove_RAM">-</button>
+							<p class="service_RAM_value">0</p>
+							<button class="service_add_RAM">+</button>
+							<p class="vm_RAM_available">0</p>
+						</div>
+						<div class="service_MU_config">
+							<p>MU</p>
+							<button class="service_remove_MU">-</button>
+							<p class="service_MU_value">0</p>
+							<button class="service_add_MU">+</button>
+						</div>
+					</div>
+					<div>
+						<div>
+							<select id="choix_vm">
+								<option value="0">Aucun</option>
+							</select>
+						</div>
+						<button id="add_service">Ajouter</button>
+					</div>
+				</div>-->
+			</div>
+			<div id="config_strategies">
+				<p><b>Stratégies</b></p>
+				<p id="strategie"></p>
+				<p id="strategie_vm"></p>
+				<p id="strategie_service"></p>
+				<p id="capacite_serveur"></p>
+				<p id="seuil_vm"></p>
+				<p id="seuil_service"></p>
+			</div>
+			<!--<div id="import_xml">
+				<p><b>Fichier XML</b></p>
+				<input id="choose_xml" type="file" accept=".xml" />
+				<label for="choose_xml">Choisir XML</label>
+				<p id="textfile">Aucun fichier choisi</p>
+				<input id="save_state" type="button" value="Sauvegarder état"/>
+			</div>-->
+		</div>
+		<div>
+			<div>
+				<div id="cy">
+				</div>
+			</div>
+			<div id="container_canvas">
+				<canvas id='myPlot' height="430"></canvas>
+			</div>
+		</div>
+		<footer>
+			<p>XML File : </p>
+		</footer>
+  </body>
+</html>
