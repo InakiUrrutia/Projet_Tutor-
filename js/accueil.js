@@ -571,12 +571,14 @@ function drawCloudFromXML(filename){
   chart.removeInterval();
   // XML algorithm
   let connect = new XMLHttpRequest();
-  connect.open("GET", "xml/"+filename, false);
-  connect.setRequestHeader("Content-Type", "text/xml");
+  connect.open("GET", "./xml/"+filename, false);
+  connect.setRequestHeader("Content-Type", "application/xml");
+  connect.overrideMimeType('application/xml');
   connect.send(null);
   // Place the response in an XML document.
   let theDocument = connect.responseXML;
   // Place the root node in an element.
+  console.log(theDocument);
   let cloud = theDocument.childNodes[0];
   for(let i=0; i<cloud.children.length; i++){
     let node = cloud.children[i];
