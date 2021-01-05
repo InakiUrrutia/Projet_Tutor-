@@ -8,4 +8,4 @@ Add Virutal Machines and Services, Choose the strategy, Simulate a workflow and 
 
 Or you can import your own config in XML format
 
-( some xml files a provided, you can use them to test the program )
+( some xml files are provided, you can use them to test the program )
