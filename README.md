@@ -1,5 +1,5 @@
 # Projet_Tutore
-Graphic representation of a Cloud System Elasticity
+Graphic representation of Cloud System Elasticity
 
 ### How to use
 Use python Server.py or launch launch_server.cmd program to start a server
